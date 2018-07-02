@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="ios-pink">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Radio
     </ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <!--*********** List  ***********-->
+  <ion-list class="wave">
+    <ion-item tappable *ngFor="let radio of items | async" (click)="openPlayer(radio.$key)">
+      <ion-thumbnail item-left>
+        <img [src]="radio.image">
+      </ion-thumbnail>
+      <h2>{{radio.title}}</h2>
+      <p>{{radio.description}}</p>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
