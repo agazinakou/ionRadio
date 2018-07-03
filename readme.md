@@ -1,4 +1,3 @@
-# ionRadio
 <img src="logo.png" height="100" />
 Simple, useful and efficient.
 
