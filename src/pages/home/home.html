@@ -13,7 +13,7 @@
 <ion-content>
   <!--*********** List  ***********-->
   <ion-list class="wave">
-    <ion-item tappable *ngFor="let radio of items | async" (click)="openPlayer(radio.$key)">
+    <ion-item tappable *ngFor="let radio of items | async" (click)="openPlayer(radio)">
       <ion-thumbnail item-left>
         <img [src]="radio.image">
       </ion-thumbnail>

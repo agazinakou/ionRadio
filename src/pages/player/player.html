@@ -1,18 +1,34 @@
-<!--
-  Generated template for the PlayerPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>player</ion-title>
+<ion-header no-border>
+  <ion-navbar transparent color="light">
+    <ion-buttons (click)="dismiss()">
+      <button color="light" ion-button icon-only>
+        <ion-icon name="md-close"></ion-icon> close
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content no-padding>
 
-<ion-content padding>
+<div class="profile-header" [ngStyle]="{'background-image': 'url(' + params.image  + ')'}"></div>
+  <div class="profile">
+    <div class="profile-box">
+
+      <ion-img class="profile-image" src="{{ params.image }}"></ion-img>
+      <h3 padding-top>{{ params.title }}</h3>
+      <p padding-top>{{ params.description }}</p>
+      <!-- play/stop button-->
+      <div>
+        <input #dummy style="display: none" type="text" value="{{ params.url }}">
+        <button ion-button *ngIf="!playing" large (click)="play(dummy.value)" clear icon-only color="dark">
+          <ion-icon name="play"></ion-icon>
+        </button>
+        <button ion-button color="dark" *ngIf="playing" large (click)="pause()" clear icon-only>
+          <ion-icon name="pause"></ion-icon>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
 </ion-content>

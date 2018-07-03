@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { PlayerPage } from '../pages/player/player';
+import { RadioProvider } from '../providers/radio/radio';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PlayerPage } from '../pages/player/player';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RadioProvider
   ]
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
-import { PlayerPage } from './../player/player';
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { NavController, ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import { PlayerPage } from './../player/player';
 
 interface Items {
   description: string;
@@ -33,9 +33,9 @@ export class HomePage {
     this.items = this.itemsCollection.valueChanges();
   }
 
-  openPlayer(radioId) {
-    let profileModal = this.modalCtrl.create('PlayerPage', {
-      radioId: radioId
+  openPlayer(radio) {
+    let profileModal = this.modalCtrl.create(PlayerPage, {
+      radio: radio
     });
     profileModal.present();
   }
