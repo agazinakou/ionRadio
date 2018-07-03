@@ -1,5 +1,5 @@
 # ionRadio
-<img src="logo.png" />
+<img src="logo.png" height="100" />
 Simple, useful and efficient.
 
 ## Setup
