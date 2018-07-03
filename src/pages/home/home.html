@@ -3,8 +3,8 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      Radio
+    <ion-title text-center>
+      Radio channel
     </ion-title>
   </ion-navbar>
 
@@ -12,7 +12,7 @@
 
 <ion-content>
   <!--*********** List  ***********-->
-  <ion-list class="wave">
+  <ion-list class="wave" no-lines>
     <ion-item tappable *ngFor="let radio of items | async" (click)="openPlayer(radio)">
       <ion-thumbnail item-left>
         <img [src]="radio.image">

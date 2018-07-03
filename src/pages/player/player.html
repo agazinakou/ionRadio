@@ -20,10 +20,10 @@
       <!-- play/stop button-->
       <div>
         <input #dummy style="display: none" type="text" value="{{ params.url }}">
-        <button ion-button *ngIf="!playing" large (click)="play(dummy.value)" clear icon-only color="dark">
+        <button ion-button *ngIf="!playing" color="light" large (click)="play(dummy.value)" clear icon-only>
           <ion-icon name="play"></ion-icon>
         </button>
-        <button ion-button color="dark" *ngIf="playing" large (click)="pause()" clear icon-only>
+        <button ion-button color="dark" *ngIf="playing" color="light" large (click)="pause()" clear icon-only>
           <ion-icon name="pause"></ion-icon>
         </button>
       </div>
